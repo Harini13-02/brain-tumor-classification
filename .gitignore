@@ -1,0 +1,44 @@
+# Large raw dataset files exceeding GitHub 100MB limit
+archive (1).zip
+archive (1)/
+brain_tumor_models.zip
+
+# Python compiled files & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Local databases & uploads
+*.db
+*.sqlite3
+backend/brain_tumor_app.db
+brain_tumor_app.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Sensitive environment configuration
+.env
+backend/.env
+frontend/.env
+*.env.local
+
+# Frontend dependencies and production builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Logs & temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+.DS_Store
+Thumbs.db
