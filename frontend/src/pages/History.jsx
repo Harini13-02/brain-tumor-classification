@@ -13,7 +13,7 @@ import {
   Clock,
   Layers
 } from 'lucide-react';
-import { predictionService } from '../services/api';
+import { predictionService, API_BASE_URL } from '../services/api';
 
 export const History = () => {
   const [items, setItems] = useState([]);
@@ -210,7 +210,7 @@ export const History = () => {
                   <tr key={item.id} className="hover:bg-slate-50/70 transition-colors">
                     <td className="py-3 px-4">
                       <img 
-                        src={`http://localhost:8000${item.image_url}`} 
+                        src={`${API_BASE_URL}${item.image_url}`} 
                         alt={item.original_filename}
                         className="w-10 h-10 object-cover rounded-md border border-slate-200 bg-slate-100 cursor-pointer hover:opacity-90"
                         onClick={() => setActiveModalItem(item)}
@@ -320,7 +320,7 @@ export const History = () => {
 
             <div className="flex gap-4 items-center">
               <img
-                src={`http://localhost:8000${activeModalItem.image_url}`}
+                src={`${API_BASE_URL}${activeModalItem.image_url}`}
                 alt="MRI Scan"
                 className="w-24 h-24 object-cover rounded-xl border border-slate-200 bg-black shrink-0"
               />

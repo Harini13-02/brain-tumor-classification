@@ -23,7 +23,7 @@ import {
   ResponsiveContainer, 
   Cell 
 } from 'recharts';
-import { predictionService } from '../services/api';
+import { predictionService, API_BASE_URL } from '../services/api';
 import { MedicalDisclaimer } from '../components/common/MedicalDisclaimer';
 
 const MODEL_OPTIONS = [
@@ -343,7 +343,7 @@ export const Prediction = () => {
               <div className="bg-gradient-to-r from-medical-50/70 via-slate-50 to-tealAccent-50/50 p-4 rounded-xl border border-medical-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <img
-                    src={`http://localhost:8000${result.image_url}`}
+                    src={`${API_BASE_URL}${result.image_url}`}
                     alt="Processed MRI"
                     className="w-16 h-16 rounded-lg object-cover border border-slate-300 shadow-xs bg-black"
                   />

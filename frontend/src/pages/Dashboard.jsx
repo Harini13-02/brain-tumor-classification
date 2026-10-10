@@ -23,7 +23,7 @@ import {
   ResponsiveContainer, 
   Cell 
 } from 'recharts';
-import { predictionService } from '../services/api';
+import { predictionService, API_BASE_URL } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { MedicalDisclaimer } from '../components/common/MedicalDisclaimer';
 
@@ -304,7 +304,7 @@ export const Dashboard = () => {
                   <tr key={p.id} className="hover:bg-slate-50/70 transition-colors">
                     <td className="py-2.5 px-3">
                       <img 
-                        src={`http://localhost:8000${p.image_url}`} 
+                        src={`${API_BASE_URL}${p.image_url}`} 
                         alt={p.original_filename}
                         className="w-9 h-9 object-cover rounded-md border border-slate-200 bg-slate-100"
                         onError={(e) => { e.target.style.display = 'none'; }}
